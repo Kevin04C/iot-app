@@ -1,0 +1,85 @@
+<div>
+    <div class="mb-4">
+        <h5>Editar Contenedor</h5>
+    </div>
+    <!-- <h3>Nuevo Contenedor</h3> -->
+
+    <form [formGroup]="form"  (ngSubmit)="guardar()">
+        <div class="grid">
+            <div class="flex flex-column gap-2 col-6">
+                <label htmlFor="username">Identificador</label>
+                <input
+                    pInputText
+                    id="username"
+                    placeholder="Eje: ABXA1"
+                    formControlName="contenedor_identificador"
+                    [ngClass]="{'ng-invalid ng-dirty': form.get('contenedor_identificador').invalid}"
+                />
+            </div>
+            <div class="flex flex-column gap-2 col-6">
+                <label htmlFor="username">Peso</label>
+                <input
+                    pInputText
+                    id="username"
+                    placeholder="Eje: 10"
+                    formControlName="contenedor_peso"
+                    [ngClass]="{'ng-invalid ng-dirty': form.get('contenedor_peso').invalid}"
+                />
+            </div>
+        </div>
+        <div class="grid">
+            <div class="flex flex-column gap-2 col-6">
+                <label htmlFor="username">Humedad</label>
+                <input
+                    pInputText
+                    id="username"
+                    placeholder="Eje: 10.22"
+                    formControlName="contenedor_humedad"
+                    [ngClass]="{'ng-invalid ng-dirty': form.get('contenedor_humedad').invalid}"
+                />
+            </div>
+            <div class="flex flex-column gap-2 col-6">
+                <label htmlFor="username">Posicion</label>
+                <input
+                    pInputText
+                    id="username"
+                    placeholder="Eje: 1"
+                    formControlName="contenedor_posicion"
+                    [ngClass]="{'ng-invalid ng-dirty': form.get('contenedor_posicion').invalid}"
+                />
+            </div>
+        </div>
+        <div class="grid">
+            <div class="flex flex-column gap-2 col-6">
+                <label htmlFor="username">Temperatua</label>
+                <input
+                    pInputText
+                    id="username"
+                    placeholder="Eje: 10.22"
+                    formControlName="contenedor_temperatura"
+                    [ngClass]="{'ng-invalid ng-dirty': form.get('contenedor_temperatura').invalid}"
+                />
+            </div>
+        </div>
+        <div class="grid">
+            <div class="col-6">
+                <div class="flex gap-2" style="align-items: center">
+                    <p-inputSwitch
+                        formControlName="contenedor_activo"
+                    ></p-inputSwitch>
+                    <span>Activo</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex gap-2" style="width: 100%; justify-content: end">
+            <p-button
+                [loading]="loading"
+                label="Guardar"
+                [rounded]="true"
+                icon="pi pi-save"
+                type="submit"
+            ></p-button>
+        </div>
+    </form>
+</div>
